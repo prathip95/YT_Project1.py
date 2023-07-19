@@ -53,7 +53,7 @@ def get_playlists_data(youtube, channel_id):
 
       playlists_data.append(playlist_data)
 
-    retn playlists_data, len(playlists)
+    return playlists_data, len(playlists)
   except HttpError as e:
     print("An error occurred:", e)
     return [], 0
