@@ -187,7 +187,7 @@ def get_multiple_channel_data(channel_ids,apikey):
 
 
 def store_data_mongo(alldata):
-  mongourl = st.secrets["MONGOURL"]
+  mongourl = st.secrets["mongodb+srv://prathip:<password>@cluster1.ifalapx.mongodb.net/?retryWrites=true&w=majority"]
   try:
     with pymongo.MongoClient(mongourl) as client:
       db = client['YT_Data']
