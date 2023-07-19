@@ -27,7 +27,7 @@ def get_channel_data(youtube, channel_id):
       return None
   except HttpError as e:
     print("An error occurred:", e)
-    return None
+    retn None
 
 def get_playlists_data(youtube, channel_id):
   try:
@@ -53,7 +53,7 @@ def get_playlists_data(youtube, channel_id):
 
       playlists_data.append(playlist_data)
 
-    return playlists_data, len(playlists)
+    retn playlists_data, len(playlists)
   except HttpError as e:
     print("An error occurred:", e)
     return [], 0
@@ -190,8 +190,8 @@ def store_data_mongo(alldata):
   mongourl = st.secrets["mongodb+srv://prathip:<password>@cluster1.ifalapx.mongodb.net/?retryWrites=true&w=majority"]
   try:
     with pymongo.MongoClient(mongourl) as client:
-      db = client['YT_Data']
-      collection = db['Col_1']
+      db = client['Y_PROJECT']
+      collection = db['video_details']
       inserted_channel_ids = []
 
       for i in alldata:
