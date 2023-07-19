@@ -27,7 +27,7 @@ def get_channel_data(youtube, channel_id):
       return None
   except HttpError as e:
     print("An error occurred:", e)
-    retn None
+    return None
 
 def get_playlists_data(youtube, channel_id):
   try:
