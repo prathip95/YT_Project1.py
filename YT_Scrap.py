@@ -189,7 +189,7 @@ def get_multiple_channel_data(channel_ids,apikey):
 
 
 def store_data_mongo(alldata):
-    mongourl = st.secrets["MONGOURL"]
+    mongourl = "mongodb+srv://prathip:1234@cluster1.ifalapx.mongodb.net/"
     try:
         with pymongo.MongoClient(mongourl) as client:
             db = client['YoutubeHacks']
@@ -240,7 +240,14 @@ def sql_connect():
 def store_data_sql(conn,cursor,filterdata):
     try:
         if conn:
-            mongourl = st.secrets["MONGOURL"]
+            mongourl = def store_data_mongo(alldata):
+    mongourl = ["mongodb+srv://prathip:1234@cluster1.ifalapx.mongodb.net/"]
+    try:
+        with pymongo.MongoClient(mongourl) as client:
+            db = client['YoutubeHacks']
+            collection = db['ChannelData']
+            
+            inserted_channel_ids = []
             mongoclient = pymongo.MongoClient(mongourl)
             db = mongoclient['YoutubeHacks']
             collection = db['ChannelData']
